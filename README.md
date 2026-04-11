@@ -28,7 +28,7 @@
 
 * `2026.x.x` 📄 Paper released on arXiv.
 * `2026.x.x` 🚀 Code / model / demo will be released soon.
-* `2026.2.21` 🔥 **DocSeeker** is accepted to **CVPR 2026** as a **Highlight** paper.
+* `2026.4.9` 🔥 **DocSeeker** is accepted to **CVPR 2026** as a **Highlight** paper.
 
 
 ---
@@ -104,18 +104,6 @@ DocSeeker sets strong results on **DUDE**, **MP-DocVQA**, and **SlideVQA**, and 
 
 ---
 
-## Demo
-
-### Online Demo
-
-Coming soon.
-
-### Local Demo
-
-Coming soon.
-
----
-
 ## Dataset
 
 Our training pipeline is built upon existing multi-page document VQA datasets, including **MP-DocVQA** and **DUDE**, and evaluation is conducted on both in-domain and out-of-domain benchmarks such as **MMLongBench-doc**, **LongDocURL**, and **SlideVQA**.
@@ -133,8 +121,6 @@ More details about data preparation, distillation, and filtering will be release
 ---
 
 ## Citation
-
-> Full citation information will be updated after the paper is publicly released.
 
 ```bibtex
 @inproceedings{yan2026docseeker,
