@@ -1,10 +1,13 @@
 # DocSeeker
+
 <p align="center">
-    <!-- You can replace this with your teaser / framework figure -->
+    <!-- Replace with your teaser / framework figure -->
     <img src="assets/teaser.png" width="900"/>
 <p>
 
-<h3 align="center"> <a href="https://arxiv.org/abs/XXXX.XXXXX">DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding</a></h3>
+<h3 align="center">
+    <a href="https://arxiv.org/abs/XXXX.XXXXX">DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding</a>
+</h3>
 <h2 align="center">CVPR 2026 Highlight</h2>
 
 <h5 align="center">
@@ -18,15 +21,13 @@
 </h5>
 
 > [**[CVPR 2026 Highlight] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding**](https://arxiv.org/abs/XXXX.XXXXX)  
-> Hao Yan, Yuliang Liu*, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen*, Xiang Bai  
-> Huazhong University of Science and Technology, Huawei Inc.  
-> \* Corresponding authors
+> Hao Yan, Yuliang Liu, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen, Xiang Bai
 
 ---
 
 ## News
 
-* `2026.x.x` 🔥 **DocSeeker** is accepted to **CVPR 2026 as a Highlight paper**.
+* `2026.2.21` 🔥 **DocSeeker** is accepted to **CVPR 2026** as a **Highlight** paper.
 * `2026.x.x` 📄 Paper released on arXiv.
 * `2026.x.x` 🚀 Code / model / demo will be released soon.
 
@@ -34,62 +35,40 @@
 
 ## Introduction
 
-**DocSeeker** is a document multimodal large language model for **long document understanding**, built to address the severe performance degradation of existing MLLMs on multi-page documents as document length grows. The paper identifies two core bottlenecks in long-document reasoning: **low signal-to-noise ratio**, where crucial evidence is buried in many irrelevant pages, and **supervision scarcity**, where training data often provides only short final answers without intermediate reasoning or evidence grounding. :contentReference[oaicite:2]{index=2}
+**DocSeeker** is a multimodal large language model for **long document understanding**. Existing MLLMs often struggle as document length grows, because crucial evidence is easily buried in many irrelevant pages, while most training data only provides short final answers without explicit evidence grounding.
 
-To solve these issues, DocSeeker introduces a structured **Analysis–Localization–Reasoning (ALR)** paradigm. Instead of directly predicting answers, the model first analyzes the question, then explicitly localizes evidence pages, and finally performs grounded reasoning before outputting the answer together with evidence page IDs. This design improves interpretability and strengthens the model’s ability to reason over long, visually rich documents. :contentReference[oaicite:3]{index=3}
-
-DocSeeker is built on top of **Qwen-2.5-VL-7B-Instruct** and is trained with a two-stage pipeline:  
-1. **SFT with distilled ALR CoT data**, to teach the model the ALR reasoning pattern;  
-2. **Evidence-aware GRPO (EviGRPO)**, to jointly optimize answer correctness and evidence localization.  
-
-The paper also proposes **Evidence-Guided Resolution Allocation (EGRA)**, which keeps evidence pages at high resolution while downsampling many non-evidence pages during training, making long-document learning more efficient and effective. 
+To address this, DocSeeker introduces a structured **Analysis–Localization–Reasoning (ALR)** paradigm, which encourages the model to first analyze the question, then localize evidence pages, and finally perform grounded reasoning before generating the answer. Built on **Qwen-2.5-VL-7B-Instruct**, DocSeeker further combines **ALR CoT distillation**, **Evidence-aware GRPO**, and **Evidence-Guided Resolution Allocation (EGRA)** for effective long-document training. This leads to strong gains on both in-domain and out-of-domain benchmarks, while making the reasoning process more interpretable and evidence-grounded.
 
 ---
 
 ## Highlights
 
-- **Structured visual reasoning for long documents.**  
-  We propose the **ALR paradigm**, which decomposes document reasoning into **question analysis**, **evidence localization**, and **reasoning process**, with explicit evidence grounding. :contentReference[oaicite:5]{index=5}
+- **A new structured reasoning paradigm for long documents.**  
+  We propose **ALR (Analysis–Localization–Reasoning)**, which turns long-document QA from direct answer prediction into an explicit evidence-grounded reasoning process.
 
-- **Two-stage training for grounded reasoning.**  
-  DocSeeker combines **high-quality ALR CoT distillation** and **Evidence-aware GRPO** to improve both localization and reasoning. 
+- **Evidence-grounded training instead of answer-only supervision.**  
+  DocSeeker is trained with a two-stage pipeline that combines **high-quality ALR CoT distillation** and **Evidence-aware GRPO**, explicitly optimizing both **evidence localization** and **answer correctness**.
 
-- **Efficient long-context visual training.**  
-  We introduce **EGRA**, a simple yet effective strategy that allocates different image resolutions to evidence and non-evidence pages during training. :contentReference[oaicite:7]{index=7}
-
-- **Strong generalization to ultra-long documents.**  
-  Even though training uses relatively short multi-page datasets, DocSeeker generalizes robustly to much longer out-of-domain documents. 
-
-- **Naturally synergistic with visual RAG.**  
-  The explicit evidence-localization capability makes DocSeeker a strong foundation for building robust retrieval-augmented document reasoning systems. :contentReference[oaicite:9]{index=9}
+- **Efficient long-document learning with EGRA.**  
+  We introduce **Evidence-Guided Resolution Allocation (EGRA)**, which preserves high resolution for evidence pages while reducing redundant cost on non-evidence pages, enabling more effective and scalable training on long visual documents.
 
 ---
 
 ## Main Results
 
-DocSeeker achieves strong performance across both in-domain and out-of-domain long document benchmarks. According to the paper, it outperforms the same-architecture baseline by **30%–60%** across five document VQA benchmarks, and establishes open-source state-of-the-art performance on several out-of-domain settings. 
+DocSeeker achieves strong performance across both in-domain and out-of-domain long document benchmarks, outperforming representative open-source long-document MLLMs and remaining competitive with strong closed-source models.
 
 | Method | DUDE | MP-DocVQA | MMLongBench-doc | LongDocURL | SlideVQA |
 |--------|------|-----------|-----------------|------------|----------|
-| Baseline | 35.2 | 70.1 | 25.4 | 37.8 | 59.8 |
-| Baseline-SFT (short-answer) | 56.0 | 82.9 | 28.8 | 42.7 | 67.4 |
-| DocSeeker-SFT | 56.8 | 82.1 | 38.6 | 49.1 | 75.2 |
-| **DocSeeker** | **57.4** | **86.2** | **40.1** | **51.7** | **77.1** |
+| mPLUG-DocOwl2 | 46.8 | 69.4 | 13.4 | 5.3 | - |
+| M3DocRAG | - | 84.4 | 21.0 | 35.1 | 55.7 |
+| Vis-RAG | - | 70.9 | 18.8 | 41.9 | 50.7 |
+| VDocRAG | 44.0 | 62.6 | 18.4 | 39.8 | 42.0 |
+| InternVL3 | 47.4 | 80.8 | 24.1 | 38.7 | 54.4 |
+| GPT-4o | 54.1 | 67.4 | **42.8** | **64.5** | - |
+| **DocSeeker** | **57.9** | **86.0** | 40.1 | 51.7 | **77.8** |
 
-These results show that the gains are not only from more training, but specifically from the proposed **ALR reasoning paradigm** and **evidence-aware optimization**. 
-
----
-
-## Framework Overview
-
-DocSeeker follows an **Analyze–Locate–Reason** workflow:
-
-1. **Question Analysis**: understand what the user is asking.
-2. **Evidence Localization**: identify which pages contain useful evidence.
-3. **Reasoning Process**: synthesize grounded evidence into the final answer.
-4. **Answer Output**: return both the answer and the supporting evidence page IDs.
-
-This structured formulation improves interpretability and helps the model distinguish useful evidence from noise in long document inputs. :contentReference[oaicite:12]{index=12}
+DocSeeker sets strong results on **DUDE**, **MP-DocVQA**, and **SlideVQA**, and substantially outperforms representative open-source methods on challenging long-document benchmarks such as **MMLongBench-doc** and **LongDocURL**.
 
 ---
 
@@ -105,3 +84,76 @@ This structured formulation improves interpretability and helps the model distin
 
 ```bash
 # Coming soon
+```
+
+---
+
+## Training
+
+```bash
+# Coming soon
+```
+
+---
+
+## Inference
+
+```bash
+# Coming soon
+```
+
+---
+
+## Demo
+
+### Online Demo
+
+Coming soon.
+
+### Local Demo
+
+Coming soon.
+
+---
+
+## Dataset
+
+Our training pipeline is built upon existing multi-page document VQA datasets, including **MP-DocVQA** and **DUDE**, and evaluation is conducted on both in-domain and out-of-domain benchmarks such as **MMLongBench-doc**, **LongDocURL**, and **SlideVQA**.
+
+More details about data preparation, distillation, and filtering will be released soon.
+
+---
+
+## Evaluation
+
+```bash
+# Coming soon
+```
+
+---
+
+## Citation
+
+> Full citation information will be updated after the paper is publicly released.
+
+```bibtex
+@inproceedings{yan2026docseeker,
+  title     = {DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding},
+  author    = {Hao Yan and Yuliang Liu and Xingchen Liu and Yuyi Zhang and Minghui Liao and Jihao Wu and Wei Chen and Xiang Bai},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year      = {2026}
+}
+```
+
+---
+
+## Acknowledgement
+
+This project will release more details after publication. We sincerely thank the open-source multimodal and document understanding community for their valuable contributions.
+
+---
+
+
+## Contact
+
+For questions and collaborations, please contact the authors of the paper.
