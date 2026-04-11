@@ -8,7 +8,6 @@
 <h3 align="center">
     <a href="https://arxiv.org/abs/XXXX.XXXXX">DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding</a>
 </h3>
-<h2 align="center">CVPR 2026 Highlight</h2>
 
 <h5 align="center">
 
@@ -27,9 +26,10 @@
 
 ## News
 
-* `2026.2.21` 🔥 **DocSeeker** is accepted to **CVPR 2026** as a **Highlight** paper.
 * `2026.x.x` 📄 Paper released on arXiv.
 * `2026.x.x` 🚀 Code / model / demo will be released soon.
+* `2026.2.21` 🔥 **DocSeeker** is accepted to **CVPR 2026** as a **Highlight** paper.
+
 
 ---
 
