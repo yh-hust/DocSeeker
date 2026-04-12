@@ -112,7 +112,7 @@ DocSeeker sets strong results on **DUDE**, **MP-DocVQA**, and **SlideVQA**, and 
 ---
 ## Acknowledgement
 Our work benefit from the following open-source projects:
-- [Qwen2.5](https://github.com/QwenLM/Qwen2.5)
+- [Qwen2.5 VL](https://github.com/QwenLM/qwen-code)
 - [verl](https://github.com/volcengine/verl)
 
 
