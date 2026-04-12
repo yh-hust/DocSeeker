@@ -59,18 +59,8 @@ To address this, DocSeeker introduces a structured **Analysis–Localization–R
 DocSeeker achieves strong performance across both in-domain and out-of-domain long document benchmarks, outperforming representative open-source long-document MLLMs and remaining competitive with strong closed-source models.
 
 <p align="center">
-    <img src="assets/performance.png" width="900"/>
+    <img src="assets/performance.png" width="1000"/>
 <p>
-
-| Method | DUDE | MP-DocVQA | MMLongBench-doc | LongDocURL | SlideVQA |
-|--------|------|-----------|-----------------|------------|----------|
-| mPLUG-DocOwl2 | 46.8 | 69.4 | 13.4 | 5.3 | - |
-| M3DocRAG | - | 84.4 | 21.0 | 35.1 | 55.7 |
-| Vis-RAG | - | 70.9 | 18.8 | 41.9 | 50.7 |
-| VDocRAG | 44.0 | 62.6 | 18.4 | 39.8 | 42.0 |
-| InternVL3 | 47.4 | 80.8 | 24.1 | 38.7 | 54.4 |
-| GPT-4o | 54.1 | 67.4 | **42.8** | **64.5** | - |
-| **DocSeeker** | **57.9** | **86.0** | 40.1 | 51.7 | **77.8** |
 
 DocSeeker sets strong results on **DUDE**, **MP-DocVQA**, and **SlideVQA**, and substantially outperforms representative open-source methods on challenging long-document benchmarks such as **MMLongBench-doc** and **LongDocURL**.
 
