@@ -58,6 +58,10 @@ To address this, DocSeeker introduces a structured **Analysis–Localization–R
 
 DocSeeker achieves strong performance across both in-domain and out-of-domain long document benchmarks, outperforming representative open-source long-document MLLMs and remaining competitive with strong closed-source models.
 
+<p align="center">
+    <img src="assets/performance.png" width="900"/>
+<p>
+
 | Method | DUDE | MP-DocVQA | MMLongBench-doc | LongDocURL | SlideVQA |
 |--------|------|-----------|-----------------|------------|----------|
 | mPLUG-DocOwl2 | 46.8 | 69.4 | 13.4 | 5.3 | - |
@@ -72,13 +76,6 @@ DocSeeker sets strong results on **DUDE**, **MP-DocVQA**, and **SlideVQA**, and 
 
 ---
 
-## 🐳 Model Zoo
-
-| Model | Backbone | Status |
-|-------|----------|--------|
-| DocSeeker | Qwen-2.5-VL-7B-Instruct | Coming Soon |
-
----
 
 ## Environment
 
@@ -88,27 +85,18 @@ DocSeeker sets strong results on **DUDE**, **MP-DocVQA**, and **SlideVQA**, and 
 
 ---
 
+## Data distillation
+
+```bash
+# Coming soon
+```
+---
+
 ## Training
 
 ```bash
 # Coming soon
 ```
-
----
-
-## Inference
-
-```bash
-# Coming soon
-```
-
----
-
-## Dataset
-
-Our training pipeline is built upon existing multi-page document VQA datasets, including **MP-DocVQA** and **DUDE**, and evaluation is conducted on both in-domain and out-of-domain benchmarks such as **MMLongBench-doc**, **LongDocURL**, and **SlideVQA**.
-
-More details about data preparation, distillation, and filtering will be released soon.
 
 ---
 
@@ -132,12 +120,10 @@ More details about data preparation, distillation, and filtering will be release
 ```
 
 ---
-
 ## Acknowledgement
-
-This project will release more details after publication. We sincerely thank the open-source multimodal and document understanding community for their valuable contributions.
-
----
+Our work benefit from the following open-source projects:
+- [Qwen2.5](https://github.com/QwenLM/Qwen2.5)
+- [verl](https://github.com/volcengine/verl)
 
 
 ## Contact
