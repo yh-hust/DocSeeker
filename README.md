@@ -1,6 +1,7 @@
 <!-- omit in toc -->
 DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding (CVPR 2026 Hignlight)
 ================================================================
+Hao Yan, Yuliang Liu, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen, Xiang Bai
 
 <h5 align="center">
 
@@ -77,7 +78,9 @@ Supervised Fine-tuning
 ```
 
 Evi-GRPO
----
+```bash
+# Coming soon
+```
 
 Evaluation
 ```bash
