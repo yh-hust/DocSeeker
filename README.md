@@ -1,13 +1,6 @@
-# DocSeeker
-
-<p align="center">
-    <!-- Replace with your teaser / framework figure -->
-    <img src="assets/teaser.png" width="900"/>
-<p>
-
-<h3 align="center">
-    <a href="https://arxiv.org/abs/XXXX.XXXXX">DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding</a>
-</h3>
+<!-- omit in toc -->
+DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding (CVPR 2026 Hignlight)
+================================================================
 
 <h5 align="center">
 
@@ -15,14 +8,9 @@
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://your-project-page.github.io/)
 [![Code](https://img.shields.io/badge/Code-Coming_Soon-white)](./README.md)
 [![Model](https://img.shields.io/badge/Model-Coming_Soon-gray)]()
-[![License](https://img.shields.io/badge/License-Apache%202.0-yellow)](./LICENSE)
 <br>
 </h5>
 
-> [**[CVPR 2026 Highlight] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding**](https://arxiv.org/abs/XXXX.XXXXX)  
-> Hao Yan, Yuliang Liu, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen, Xiang Bai
-
----
 
 ## News
 
@@ -75,23 +63,23 @@ DocSeeker sets strong results on **DUDE**, **MP-DocVQA**, and **SlideVQA**, and 
 
 ---
 
-## Data distillation
+## Implementation
 
+Data distillation
 ```bash
 # Coming soon
 ```
 ---
 
-## Training
-
+Supervised Fine-tuning
 ```bash
 # Coming soon
 ```
 
+Evi-GRPO
 ---
 
-## Evaluation
-
+Evaluation
 ```bash
 # Coming soon
 ```
