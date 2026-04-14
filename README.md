@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding (CVPR 2026 Hignlight)
+DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding (CVPR 2026 Highlight)
 ================================================================
 Hao Yan, Yuliang Liu, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen, Xiang Bai
 
@@ -16,7 +16,7 @@ Hao Yan, Yuliang Liu, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen
 ## News
 
 * `2026.x.x` 📄 Paper released on arXiv.
-* `2026.x.x` 🚀 Code / model / demo will be released soon.
+* `2026.xs.x` 🚀 Code / model / demo will be released soon.
 * `2026.4.9` 🔥 **DocSeeker** is accepted to **CVPR 2026** as a **Highlight** paper.
 
 
