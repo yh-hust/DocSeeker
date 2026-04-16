@@ -5,7 +5,7 @@ Hao Yan, Yuliang Liu, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen
 
 <h5 align="center">
 
-[![arXiv](https://img.shields.io/badge/ArXiv-XXXX.XXXXX-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/XXXX.XXXXX)
+[![arXiv](https://img.shields.io/badge/ArXiv-2604.12812-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2604.12812)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://your-project-page.github.io/)
 [![Code](https://img.shields.io/badge/Code-Coming_Soon-white)](./README.md)
 [![Model](https://img.shields.io/badge/Model-Coming_Soon-gray)]()
