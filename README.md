@@ -59,7 +59,13 @@ DocSeeker sets strong results on **DUDE**, **MP-DocVQA**, and **SlideVQA**, and 
 ## Environment
 
 ```bash
-# Coming soon
+conda create -n docseeker python=3.10 -y
+conda activate docseeker
+
+pip install -r requirements.txt
+
+# Optional but commonly needed in our setup
+python -c "from opencv_fixer import AutoFix; AutoFix()"
 ```
 
 ---
@@ -68,23 +74,73 @@ DocSeeker sets strong results on **DUDE**, **MP-DocVQA**, and **SlideVQA**, and 
 
 Data distillation
 ```bash
-# Coming soon
+cd ALR_data_generate
+
+# Set API credentials
+export OPENAI_API_KEY=your_api_key
+export OPENAI_BASE_URL=your_api_base_url
+
+# Edit the paths and index range in generate.sh before running:
+# - INPUT_DATA
+# - IMAGE_DIR
+# - SAVE_BASE_DIR
+# - START_IDX / END_IDX
+# - MODEL_NAME
+
+bash generate.sh
+
+# Verify and merge the generated samples
+bash verify_and_merge.sh
 ```
 ---
 
 Supervised Fine-tuning
 ```bash
-# Coming soon
+cd Finetune
+
+# Edit the paths and experiment settings in:
+# scripts/finetune_on_ALR_data.sh
+# - MODEL_PATH
+# - DATASETS
+# - OUTPUT_DIR
+
+bash scripts/finetune_on_ALR_data.sh
 ```
 
 Evi-GRPO
 ```bash
-# Coming soon
+cd EviGRPO
+
+# Edit the paths in:
+# scripts/run_EviGRPO.sh
+# - TRAIN_FILES
+# - VAL_FILES
+# - IMAGE_PATH
+# - MODEL_PATH
+
+bash scripts/run_EviGRPO.sh
 ```
 
 Evaluation
 ```bash
-# Coming soon
+cd Evaluation
+
+# Set API credentials if answer extraction / metric parsing requires them
+export OPENAI_API_KEY=your_api_key
+export OPENAI_BASE_URL=your_api_base_url
+
+# Edit the evaluation scripts before running:
+# - DEVICE
+# - MODEL_PATH
+# - EXPERIMENT_NAME
+# - checkpoint_id
+# - dataset-specific paths if needed
+
+# MP-DocVQA / DUDE / SlideVQA
+bash scripts/run_mpdocvqa_dude_sft.sh
+
+# MMLongBench-doc / LongDocURL
+bash scripts/run_mmlongben_longdocurl.sh
 ```
 
 ---
