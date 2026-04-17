@@ -46,7 +46,7 @@ To address this, DocSeeker introduces a structured **Analysis–Localization–R
 DocSeeker achieves strong performance across both in-domain and out-of-domain long document benchmarks, outperforming representative open-source long-document MLLMs and remaining competitive with strong closed-source models.
 
 <p align="center">
-    <img src="https://imgchr.com/i/peyZxx0" width="1000"/>
+    <img src="https://s41.ax1x.com/2026/04/17/peyZxx0.png" width="1000"/>
 <p>
 
 DocSeeker sets strong results on **DUDE**, **MP-DocVQA**, and **SlideVQA**, and substantially outperforms representative open-source methods on challenging long-document benchmarks such as **MMLongBench-doc** and **LongDocURL**.
