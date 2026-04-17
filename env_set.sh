@@ -8,12 +8,12 @@ pip install "nvidia-ml-py>=12.560.30" "fastapi[standard]>=0.115.0" "optree>=0.13
 
 # 2. Install pre-compiled custom operators from official online sources
 # Using --no-build-isolation for flash_attn to avoid the ABI mismatch issue discussed earlier
-pip install /home/ma-user/work/dataset/dataset_yh/yh/flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp310-cp310-linux_x86_64.whl --no-build-isolation
-#pip install flash_attn==2.7.4.post1 --no-build-isolation
+pip install your/path/to/flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp310-cp310-linux_x86_64.whl --no-build-isolation
+# pip install flash_attn==2.7.4.post1 --no-build-isolation
 
 # FlashInfer requires a specific index to get the pre-built wheel matching your CUDA 12.4 and PyTorch 2.6
-#pip install flashinfer==0.2.5 -i https://flashinfer.ai/whl/cu126/torch2.6/
-pip install /home/ma-user/work/dataset/dataset_yh/yh/flashinfer_python-0.2.5+cu126torch2.6-cp38-abi3-linux_x86_64.whl
+# pip install flashinfer==0.2.5 -i https://flashinfer.ai/whl/cu126/torch2.6/
+pip install your/path/to/flashinfer_python-0.2.5+cu126torch2.6-cp38-abi3-linux_x86_64.whl
 
 # 3. System-level cuDNN installation (Online Network Repo)
 # Assuming Ubuntu 22.04. This replaces the local .deb cache with the official NVIDIA network repository
