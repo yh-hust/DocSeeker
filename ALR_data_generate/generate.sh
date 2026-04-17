@@ -1,6 +1,6 @@
 timestamp=$(date "+%Y%m%d_%H%M%S")
 INPUT_DATA="data/raw_data/train_dude.jsonl"
-IMAGE_DIR="/home/ma-user/work/dataset/dataset_yh/docseeker_traindata/ablation/images"
+IMAGE_DIR="/your/path/to/images"
 SAVE_BASE_DIR="data/output_data"
 MODEL_NAME="gemini-2.5-flash"
 START_IDX=10
