@@ -22,10 +22,10 @@ export RAY_TMPDIR="/cache/ray_tmp"
 PROJECT_NAME="verl_dude_mpdoc"
 EXPERIMENT_NAME="sft_expand_ck_6996_evigrpo_trainer"
 
-TRAIN_FILES="/home/ma-user/work/dataset/dataset_yh/docseeker_traindata/1011/rollout_filter_fail_iqr_fail_median_band_fail_l_max_data_evigrpo_reward.parquet"
-VAL_FILES="/home/ma-user/work/dataset/dataset_yh/docseeker_traindata/1011/mpdoc_dude_val.parquet"
-IMAGE_PATH="/home/ma-user/work/dataset/dataset_yh/docseeker_traindata/images"
-MODEL_PATH="/home/ma-user/work/dataset/dataset_yh/docseeker_weight/qwen2_5vl-flash_attn_2_data_expand_all_data_correct_mpdocvqa/dude_mpdocvqa_yh_dynamic_random_pixels_1024_256/checkpoint-5000"
+TRAIN_FILES="your/path/to/rollout_filter_fail_iqr_fail_median_band_fail_l_max_data_evigrpo_reward.parquet"
+VAL_FILES="your/path/to/mpdoc_dude_val.parquet"
+IMAGE_PATH="your/path/to/images"
+MODEL_PATH="your/path/to/checkpoint"
 
 unset OUTPUT_DIR
 TRAIN_BATCH_SIZE="128"
