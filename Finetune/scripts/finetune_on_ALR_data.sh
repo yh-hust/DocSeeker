@@ -15,14 +15,14 @@ export master_addr=${MASTER_ADDR}
 export master_port=${MASTER_PORT}
 
 DEEPSPEED_CONFIG="scripts/zero3.json"
-MODEL_PATH="/home/ma-user/work/dataset/dataset_yh/weight/Qwen2.5-VL-7B-Instruct"
+MODEL_PATH="your/path/to/Qwen2.5-VL-7B-Instruct"
 ENTRY_FILE="qwenvl/train/train_qwen.py"
 
 # 数据集与实验命名
-DATASETS="dude_expand_cor%100,mpdocvqa_expand_cor%100"
-RUN_NAME="qwen2_5vl-flash_attn_2_data_expand_all_data_correct_mpdocvqa"
+DATASETS=""
+RUN_NAME=""
 ATTN_IMPLEMENTATION="flash_attention_2"
-SAVE_DIR_NAME="dude_mpdocvqa_yh_dynamic_random_pixels_1024_256"
+SAVE_DIR_NAME=""
 
 # 输出目录拼接 (处理了原代码中 output_dir 嵌套的问题)
 BASE_OUTPUT_DIR=${OUTPUT_DIR:-"./outputs"} # 如果外部没传 OUTPUT_DIR，默认存在当前目录下的 outputs
