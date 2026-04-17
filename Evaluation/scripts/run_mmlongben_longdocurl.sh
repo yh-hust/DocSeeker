@@ -1,7 +1,28 @@
+# Available models:
+# - Qwen2.5-VL-7B-Instruct
+# - Custom fine-tuned checkpoints
+# Python entry script:
+# - vlm_inference_on_mpdoc.py
+# Supported datasets (only these 5 are allowed):
+# - mmlongbench_doc
+# - LongDocURL
+# - dude
+# - SlideVQA
+# - mpdocvqa
+# Supported subsets:
+# - test
+# - val
+# Subset availability by dataset:
+# - mpdocvqa: test, val
+# - dude: test, val
+# - SlideVQA: test, val
+# - mmlongbench_doc: test only
+# - LongDocURL: test only
+
 DATASETS_TO_PROCESS="mmlongbench_doc LongDocURL dude SlideVQA mpdocvqa"
-#DATASETS_TO_PROCESS="LongDocURL"
-# done: LongDocURL mpdocvqa dude SlideVQA mmlongbench_doc
-# to do: mmlongbench_doc
+# DATASETS_TO_PROCESS="LongDocURL"
+# Completed: LongDocURL mpdocvqa dude SlideVQA mmlongbench_doc
+# TODO: mmlongbench_doc
 
 DEVICE="0,1,2,3,4,5,6,7"
 SUBSET="test"
@@ -22,16 +43,16 @@ export OPENAI_BASE_URL="${OPENAI_BASE_URL}"
 for dataset_name in ${DATASETS_TO_PROCESS}; do
     file_to_check="${dataset_name}/output/${EXPERIMENT_NAME}_${checkpoint_id}/${SUBSET}/${dataset_name}.json"
     if [ -f "${file_to_check}" ]; then
-        echo "推理已完成！"
+        echo "Inference has already been completed."
     else
-        # 如果文件仍不存在，打印提示信息并等待一段时间后重试
-        echo "进行推理..."        
+        # If the file still does not exist, print a message and retry after running inference
+        echo "Running inference..."        
     fi
 
     while [ ! -f "${file_to_check}" ]; do
         
-        echo "目标文件不存在: ${file_to_check}"
-        echo "即将执行推理命令..."
+        echo "Target file does not exist: ${file_to_check}"
+        echo "Preparing to run the inference command..."
         echo "======================================================"
         echo "🚀 Starting process for dataset: ${dataset_name}"
         echo "======================================================"
@@ -57,13 +78,13 @@ for dataset_name in ${DATASETS_TO_PROCESS}; do
         echo "Executing inference command for ${dataset_name}..."
         echo "${cmd_str}"
         echo "---"
-        # 执行您定义的命令
+        # Execute the command defined above
         echo "---"
         echo "Executing command: ${cmd_str}"
         echo "---"
         eval ${cmd_str}
         
-        # 检查命令执行后文件是否已经生成
+        # Check whether the file has been generated after the command finishes
     done
 
     # Define the output path for the calculation scripts.
@@ -71,10 +92,10 @@ for dataset_name in ${DATASETS_TO_PROCESS}; do
     output_path="${dataset_name}/output/${EXPERIMENT_NAME}_${checkpoint_id}/${SUBSET}"
     file_to_check="${dataset_name}/output/${EXPERIMENT_NAME}_${checkpoint_id}/${SUBSET}/${dataset_name}_${EVAL_MODEL}_metric.json"
     if [ -f "${file_to_check}" ]; then
-        echo "抽取的文件存在！"
+        echo "The extracted file already exists."
     else
-        # 如果文件仍不存在，打印提示信息并等待一段时间后重试
-        echo "抽取未完成，将进行答案抽取" 
+        # If the file still does not exist, print a message and run answer extraction
+        echo "Extraction has not been completed. Running answer extraction now." 
         echo "---"
         echo "Running llm_cal.py on output path: ${output_path}"
         echo "---"
