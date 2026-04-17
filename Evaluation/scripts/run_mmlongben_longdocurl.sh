@@ -2,20 +2,20 @@ DATASETS_TO_PROCESS="mmlongbench_doc LongDocURL dude SlideVQA mpdocvqa"
 #DATASETS_TO_PROCESS="LongDocURL"
 # done: LongDocURL mpdocvqa dude SlideVQA mmlongbench_doc
 # to do: mmlongbench_doc
-# These variables remain constant for all runs.
+
 DEVICE="0,1,2,3,4,5,6,7"
 SUBSET="test"
-EXPERIMENT_NAME=qwen2_5vl-flash_attn_2_data_expand_all_data_correct_mpdocvqa
-checkpoint_id=checkpoint-5000
-MODEL_PATH="/home/ma-user/work/dataset/dataset_yh/docseeker_weight/${EXPERIMENT_NAME}/dude_mpdocvqa_yh_dynamic_random_pixels_1024_256/${checkpoint_id}"
-EVAL_MODEL='gemini-2.5-flash'
+EXPERIMENT_NAME="" 
+checkpoint_id=""
+MODEL_PATH=""
+EVAL_MODEL=""
 # torchrun settings (assuming 8 GPUs based on the DEVICE variable)
 export NPROC_PER_NODE=8
 export MASTER_ADDR=${MASTER_ADDR:-"localhost"}
 export MASTER_PORT=${MASTER_PORT:-"29500"}
 
 export OPENAI_API_KEY="${OPENAI_API_KEY}"
-export OPENAI_BASE_URL="${OPENAI_BASE_URL:-https://yunwu.ai/v1}"
+export OPENAI_BASE_URL="${OPENAI_BASE_URL}"
 
 # --- Main Loop ---
 # Loop over each dataset name defined in the DATASETS_TO_PROCESS variable.
