@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding (CVPR 2026 Highlight)
+DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding
 ================================================================
 Hao Yan, Yuliang Liu, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen, Xiang Bai
 
