@@ -1,0 +1,23 @@
+[
+    {
+        "image": [
+            "be39ba1a449301e3c6b916ea4d441eb7_0.jpg"
+        ],
+        "gt_page": [
+            0
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "Who are the authors of this document?"
+            },
+            {
+                "from": "gpt",
+                "value": "Joseph Alsop   Stewart Alsop"
+            }
+        ],
+        "accu_reward_method": "mpdoc",
+        "id": 13,
+        "expand_answer": "<think>\n\\boxed{Question Analysis}\nThe user is asking to identify the authors of the document provided on page 1.\n\n\\boxed{Evidence Localization}\nI am reviewing the top section of the provided page 1. Below the main title \"Matter of Fact\" and next to a separator, the text explicitly states \"By Joseph and Stewart Alsop\".\n\n\\boxed{Reasoning Process}\nThe document title, \"Matter of Fact\", is followed immediately by the attribution \"By Joseph and Stewart Alsop\". Therefore, Joseph Alsop and Stewart Alsop are the authors of this piece.\n</think>\n\n<answer>\n{\"evidence_pages\": [1], \"answer\": \"Joseph and Stewart Alsop\"}\n</answer>"
+    }
+]

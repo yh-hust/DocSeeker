@@ -1,0 +1,27 @@
+[
+    {
+        "image": [
+            "486cdf8417db55bffcb71bda665cd999_0.jpg",
+            "486cdf8417db55bffcb71bda665cd999_1.jpg",
+            "486cdf8417db55bffcb71bda665cd999_2.jpg"
+        ],
+        "gt_page": [
+            0,
+            1,
+            2
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "WHICH IS PRINTED DATE?"
+            },
+            {
+                "from": "gpt",
+                "value": "10/20/2021"
+            }
+        ],
+        "accu_reward_method": "mpdoc",
+        "id": 30,
+        "expand_answer": "<think>\n\\boxed{Question Analysis}\nThe user is asking to identify the \"printed date\" of the document. This requires locating a timestamp or date indicating when the document was physically or digitally printed.\n\n\\boxed{Evidence Localization}\nI will examine the provided document pages (1, 2, and 3) for any text indicating a \"printed date\". On each of the three pages, in the top right corner, the text \"Printed: 10/20/2021 14:36\" is clearly visible.\n\n\\boxed{Reasoning Process}\nThe question asks for the printed date. The evidence on pages 1, 2, and 3 consistently shows \"Printed: 10/20/2021 14:36\" in the top right corner. This directly provides the requested information. Therefore, the printed date is October 20, 2021, at 14:36.\n</think>\n<answer>\n{\"evidence_pages\": [1, 2, 3], \"answer\": \"10/20/2021 14:36\"}\n</answer>"
+    }
+]

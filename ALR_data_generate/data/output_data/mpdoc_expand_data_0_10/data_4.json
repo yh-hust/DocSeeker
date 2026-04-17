@@ -1,0 +1,25 @@
+[
+    {
+        "image": [
+            "1d7d4cdc8a88f8d94dbbd2f7961aab45_0.jpg",
+            "1d7d4cdc8a88f8d94dbbd2f7961aab45_1.jpg"
+        ],
+        "gt_page": [
+            0,
+            1
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "What is the subject of the memorandum on the first page?"
+            },
+            {
+                "from": "gpt",
+                "value": "RUNNING COAL"
+            }
+        ],
+        "accu_reward_method": "mpdoc",
+        "id": 5,
+        "expand_answer": "<think>\n\\boxed{Question Analysis}\nThe user is asking to identify the subject of the memorandum that appears on the first page of the provided document. This requires locating the specific \"SUBJECT\" field within the memorandum on page 1.\n\n\\boxed{Evidence Localization}\nI am examining the provided document content. Page 1 contains a memorandum. Within this memorandum, there is a line clearly labeled \"SUBJECT:\". The text immediately following this label is \"RUNNING COAL\".\n\n\\boxed{Reasoning Process}\nThe question directly asks for the subject of the memorandum on the first page. The evidence on page 1 explicitly states \"SUBJECT: RUNNING COAL\". Therefore, the subject is \"RUNNING COAL\".\n</think>\n<answer>\n{\"evidence_pages\": [1], \"answer\": \"RUNNING COAL\"}\n</answer>"
+    }
+]

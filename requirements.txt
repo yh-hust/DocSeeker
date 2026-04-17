@@ -1,0 +1,52 @@
+# Converted from env_set.sh
+# Install with: pip install -r requirements.txt
+# Notes:
+# - This file covers Python package dependencies only.
+# - System-level dependencies from env_set.sh (such as cuDNN via apt) are not handled here.
+# - If your environment needs a prebuilt FlashInfer wheel, you may also need:
+#   pip install flashinfer-python==0.2.5 --extra-index-url https://flashinfer.ai/whl/cu126/torch2.6/
+# - If your environment cannot build flash-attn from source, use the matching prebuilt wheel for your CUDA/PyTorch setup.
+
+torch==2.6.0
+torchvision==0.21.0
+torchaudio==2.6.0
+tensordict==0.6.2
+vllm==0.8.5.post1
+torchdata
+transformers[hf_xet]==4.51.1
+accelerate
+datasets
+peft
+hf-transfer
+numpy<2.0.0
+pyarrow>=15.0.0
+pandas
+ray[default]
+codetiming
+hydra-core
+pylatexenc
+qwen-vl-utils
+wandb
+dill
+pybind11
+liger-kernel
+mathruler
+pytest
+py-spy
+pyext
+pre-commit
+ruff
+nvidia-ml-py>=12.560.30
+fastapi[standard]>=0.115.0
+optree>=0.13.0
+pydantic>=2.9
+grpcio>=1.62.1
+flash-attn==2.7.4.post1
+opencv-python
+opencv-fixer
+decord
+deepspeed
+PyMuPDF
+editdistance
+munkres
+git+https://github.com/NVIDIA/Megatron-LM.git@core_v0.12.0rc3
