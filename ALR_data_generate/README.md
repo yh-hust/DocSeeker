@@ -54,6 +54,8 @@ cd ALR_data_generate
 bash verify_and_merge.sh
 ```
 
+The final distilled ALR training data can be downloaded from [Link](https://pan.baidu.com/s/19r9JdHCryP0LF15n1fO4Pg？pwd=mq9m)
+
 ## Notes
 
 Update the dataset paths, image paths, and output paths in the shell scripts before running them in a new environment.
