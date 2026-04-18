@@ -14,11 +14,11 @@ It fine-tunes Qwen2.5-VL on ALR-formatted multi-page document data, which teache
 
 ## How to run
 
-Parepare training data:
+### 1.Parepare training data
 
 Download ALR training data from [Link](https://pan.baidu.com/s/19r9JdHCryP0LF15n1fO4Pg？pwd=mq9m)
 
-Run the following command to start the training process on your GPU cluster:
+### 2. Start Fine-Tuning
 
 ```bash
 cd Finetune
