@@ -22,12 +22,11 @@ export RAY_TMPDIR="/cache/ray_tmp"
 PROJECT_NAME="verl_dude_mpdoc"
 EXPERIMENT_NAME="sft_expand_ck_6996_evigrpo_trainer"
 
-TRAIN_FILES="your/path/to/rollout_filter_fail_iqr_fail_median_band_fail_l_max_data_evigrpo_reward.parquet"
-VAL_FILES="your/path/to/mpdoc_dude_val.parquet"
-IMAGE_PATH="your/path/to/images"
-MODEL_PATH="your/path/to/checkpoint"
+TRAIN_FILES="/path/to/your/rollout_filter_fail_iqr_fail_median_band_fail_l_max_data_evigrpo_reward.parquet"
+VAL_FILES="/path/to/your/mpdoc_dude_val.parquet"
+IMAGE_PATH="/path/to/your/images"
+MODEL_PATH="/path/to/your/SFT-checkpoint"
 
-unset OUTPUT_DIR
 TRAIN_BATCH_SIZE="128"
 TOTAL_EPOCHS=6
 BASE_OUTPUT_DIR=${OUTPUT_DIR:-"outputs"}
@@ -81,7 +80,7 @@ TRAIN_ARGS=(
     "trainer.save_freq=5"
     "trainer.test_freq=5"
     "trainer.val_before_train=True"
-    "trainer.val_only=True"
+    "trainer.val_only=False"
     "trainer.total_epochs=${TOTAL_EPOCHS}"
     "trainer.default_local_dir=${DEFAULT_LOCAL_DIR}"
 )
