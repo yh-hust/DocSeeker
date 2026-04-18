@@ -19,17 +19,14 @@
 # - mmlongbench_doc: test only
 # - LongDocURL: test only
 
-DATASETS_TO_PROCESS="mmlongbench_doc LongDocURL dude SlideVQA mpdocvqa"
-# DATASETS_TO_PROCESS="LongDocURL"
-# Completed: LongDocURL mpdocvqa dude SlideVQA mmlongbench_doc
-# TODO: mmlongbench_doc
+DATASETS_TO_PROCESS="mmlongbench_doc"   # ONE OF "mmlongbench_doc LongDocURL dude SlideVQA mpdocvqa"
 
 DEVICE="0,1,2,3,4,5,6,7"
 SUBSET="test"
-EXPERIMENT_NAME="" 
-checkpoint_id=""
-MODEL_PATH=""
-EVAL_MODEL=""
+EXPERIMENT_NAME="EXPERIMENT_NAME"
+checkpoint_id="checkpoint_id"
+MODEL_PATH="/path/to/your/model"
+EVAL_MODEL="EVAL_API_MODEL"
 # torchrun settings (assuming 8 GPUs based on the DEVICE variable)
 export NPROC_PER_NODE=8
 export MASTER_ADDR=${MASTER_ADDR:-"localhost"}
