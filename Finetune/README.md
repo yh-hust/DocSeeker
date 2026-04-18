@@ -16,7 +16,7 @@ It fine-tunes Qwen2.5-VL on ALR-formatted multi-page document data, which teache
 
 ### Parepare training data
 
-Download ALR training data from [Link](https://pan.baidu.com/s/19r9JdHCryP0LF15n1fO4Pg？pwd=mq9m)
+Download ALR training data from [Link](https://pan.baidu.com/s/1JN8xiNHFbRPq8P9hY44_9w?pwd=kaby)
 
 ### Start Fine-Tuning
 
