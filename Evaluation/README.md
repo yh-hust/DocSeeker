@@ -18,7 +18,7 @@ It performs model inference on benchmark datasets and then computes answer extra
 
 ## How to run
 
-prepare the images for each benchmark and place them into their respective folders under the `tmp` directory:
+Prepare the images for each benchmark and place them into their respective folders under the `tmp` directory:
 
 ```text
 Evaluation/
