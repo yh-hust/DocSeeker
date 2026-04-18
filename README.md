@@ -13,7 +13,7 @@ Hao Yan, Yuliang Liu, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen
 
 ## News
 
-* `2026.4.16` 🚀 Code will be released soon.
+* `2026.4.18` 🚀 Code and data are now available.
 * `2026.4.15` 📄 Paper released on arXiv.
 * `2026.4.9` 🔥 **DocSeeker** is accepted to **CVPR 2026** as a **Highlight** paper.
 
