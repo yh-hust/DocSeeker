@@ -14,11 +14,11 @@ It fine-tunes Qwen2.5-VL on ALR-formatted multi-page document data, which teache
 
 ## How to run
 
-### 1. Parepare training data
+### Parepare training data
 
 Download ALR training data from [Link](https://pan.baidu.com/s/19r9JdHCryP0LF15n1fO4Pg？pwd=mq9m)
 
-### 2. Start Fine-Tuning
+### Start Fine-Tuning
 
 ```bash
 cd Finetune
