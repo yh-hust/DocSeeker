@@ -142,11 +142,8 @@ export OPENAI_BASE_URL=your_api_base_url
 # - checkpoint_id
 # - dataset-specific paths if needed
 
-# MP-DocVQA / DUDE / SlideVQA
-bash scripts/run_mpdocvqa_dude_sft.sh
+bash scripts/run_evaluation.sh
 
-# MMLongBench-doc / LongDocURL
-bash scripts/run_mmlongben_longdocurl.sh
 ```
 
 ---
