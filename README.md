@@ -5,9 +5,7 @@ Hao Yan, Yuliang Liu, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen
 
 <h5 align="center">
 
-[![arXiv](https://img.shields.io/badge/ArXiv-2604.12812-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2604.12812)
-[![Homepage](https://img.shields.io/badge/Homepage-Project_Page-blue)](https://lxc-hust.github.io/DocSeek_home/)
-[![Code](https://img.shields.io/badge/Code-GitHub-black?logo=github)](https://github.com/yh-hust/DocSeeker)
+[\[📜 Paper\]](https://arxiv.org/abs/2604.12812) [\[🚀 Code\]](https://github.com/yh-hust/DocSeeker) [\[📖 Project Page\]](https://lxc-hust.github.io/DocSeek_home/)
 
 <br>
 </h5>
