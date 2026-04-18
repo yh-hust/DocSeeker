@@ -47,7 +47,7 @@ cd ALR_data_generate
 bash generate.sh
 ```
 
-Verify and merge the generated results:
+Secondary verification and merge the generated results:
 
 ```bash
 cd ALR_data_generate
