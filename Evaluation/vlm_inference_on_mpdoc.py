@@ -21,18 +21,6 @@ DOCUMENT_PATH = {
     'mmlongbench-doc':'mmlongbench-doc/documents'
 }
 
-def set_global_seed(seed: int, deterministic: bool = True):
-    """统一设置随机种子，使推理结果可复现"""
-    os.environ["PYTHONHASHSEED"] = str(seed)
-    random.seed(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    
-    if deterministic:
-        torch.backends.cudnn.deterministic = True
-        torch.backends.cudnn.benchmark = False
-
 def get_rank_and_world_size():
     if dist.is_available() and dist.is_initialized():
         rank = dist.get_rank()
@@ -43,17 +31,12 @@ def get_rank_and_world_size():
     return rank, world_size
 
 def save_inference_results(all_infered_datas, save_path):
-    # 确保保存目录存在
-    os.makedirs(os.path.dirname(save_path), exist_ok=True)
     
-    # 将推理结果保存到 JSON 文件
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
     with open(save_path, 'w') as f:
         json.dump(all_infered_datas, f, ensure_ascii=False,indent=4)
-    print(f"推理结果已保存到 {save_path}")
 
 def append_to_json(file_path, new_data):
-    # 读取已有数据（如果存在），并追加新数据
-    # 将合并后的数据保存回文件
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(new_data, f, ensure_ascii=False, indent=4)
 
@@ -244,9 +227,6 @@ def inference(model,processor,dataset,save_name,args):
 def load_model(args):
 
     if 'qwen' in args.model_name:
-        if 'moba' in args.attn_implementation:
-            from MoBA_attn.moba import register_moba, MoBAConfig,register_moba_to_qwenvl2_5
-            register_moba_to_qwenvl2_5()
         model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
             args.model_path, torch_dtype="auto",attn_implementation=args.attn_implementation,trust_remote_code=True
             ).cuda().eval()
@@ -261,43 +241,60 @@ def load_model(args):
     return model,processor
 
 if __name__=="__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset_name", type=str, default="mpdocvqa")
-    parser.add_argument("--subset", type=str, default="val",choices=["val","test"])
-    parser.add_argument("--save_dir", type=str, default="output/sft_expand_ck_6996")
-    parser.add_argument("--model_name", type=str, default="qwen2_5_vl")
-    parser.add_argument("--model_path", type=str, default="/cache/weight/Qwen2.5-VL-7B-Instruct")
-    parser.add_argument("--max_pages", type=int, default=120)
-    parser.add_argument("--resolution", type=int, default=144)
-    parser.add_argument("--max_tokens", type=int, default=2048)
-    parser.add_argument("--use_direct", type=bool, default=False)
-    parser.add_argument("--use_page_named",type=bool, default=False)
-    parser.add_argument("--temperature", type=float, default=0.0)
-    parser.add_argument("--attn_implementation", type=str, default="flash_attention_2")
-    parser.add_argument("--seed", default=34, type=int)
-    parser.add_argument("--rank", default=0, type=int)
-    parser.add_argument("--local_rank", default=0, type=int)
+    parser = argparse.ArgumentParser(description="Evaluation script for DocSeeker on multi-page document VQA datasets.")
+    
+    parser.add_argument("--dataset_name", type=str, default="mpdocvqa", 
+                        choices=["dude", "mpdocvqa", "longdocurl", "slidevqa", "mmlongbench_doc"],
+                        help="Name of the evaluation dataset.")
+    parser.add_argument("--subset", type=str, default="val", choices=["val", "test"],
+                        help="Dataset split to evaluate on (e.g., val or test).")
+    parser.add_argument("--save_dir", type=str, default="output/qwen",
+                        help="Directory to save the inference results and logs.")
+    
+    parser.add_argument("--model_name", type=str, default="qwen2_5_vl",
+                        help="Identifier for the model architecture or configuration.")
+    parser.add_argument("--model_path", type=str, default="Qwen/Qwen2.5-VL-7B-Instruct",
+                        help="Local path or Hugging Face repository ID of the model weights.")
+    
+    parser.add_argument("--max_pages", type=int, default=120,
+                        help="Maximum number of document pages to process, useful for truncating ultra-long documents.")
+    parser.add_argument("--resolution", type=int, default=144,
+                        help="Image resolution setting for the vision encoder.")
+    parser.add_argument("--max_tokens", type=int, default=2048,
+                        help="Maximum number of tokens to generate during inference.")
+    parser.add_argument("--temperature", type=float, default=0.7,
+                        help="Sampling temperature for text generation. Use lower values for more deterministic outputs.")
+    parser.add_argument("--attn_implementation", type=str, default="flash_attention_2",
+                        help="Attention mechanism implementation to use (e.g., flash_attention_2 for memory efficiency).")
+    
+    parser.add_argument("--use_direct", action="store_true",
+                        help="If specified, the model generates direct answers without the structured ALR reasoning process.")
+    parser.add_argument("--use_page_named", action="store_true",
+                        help="If specified, prepends page identifiers (e.g., 'Page 1:') to the visual tokens of each page.")
+    
+    parser.add_argument("--rank", default=0, type=int,
+                        help="Global rank for distributed evaluation.")
+    parser.add_argument("--local_rank", default=0, type=int,
+                        help="Local rank for distributed evaluation (handled automatically by deepspeed/torchrun).")
+    
     args = parser.parse_args()
-    set_global_seed(args.seed)
-    folder_path = ''
-    if args.dataset_name.lower()=='dude':
+
+    dataset_name = args.dataset_name
+    
+    if dataset_name == 'dude':
         folder_path = 'dude'
-    elif args.dataset_name.lower()=='mpdocvqa':
+    elif dataset_name == 'mpdocvqa':
         folder_path = 'mpdocvqa'
-    elif args.dataset_name.lower()=='longdocurl':
+    elif dataset_name == 'longdocurl':
         folder_path = 'LongDocURL'
-        assert args.subset=='test'
-    elif args.dataset_name.lower()=='slidevqa':
+        assert args.subset == 'test', "LongDocURL only supports 'test' subset."
+    elif dataset_name == 'slidevqa':
         folder_path = 'SlideVQA'
-    elif args.dataset_name.lower()=='mmlongbench_doc':
+    elif dataset_name == 'mmlongbench_doc':
         folder_path = 'mmlongbench_doc'
-        assert args.subset == 'test'
-    else:
-        raise NotImplementedError
-    #import pdb;pdb.set_trace()
-    #save_dir = os.path.join(folder_path,'output',args.save_dir,args.subset)
+        assert args.subset == 'test', "MMLongBench_doc only supports 'test' subset."
+    
     save_dir = args.save_dir
-    #import pdb;pdb.set_trace()
     os.makedirs(save_dir,exist_ok=True)
     save_name = f'{args.dataset_name}'
     save_path = os.path.join(save_dir,f'{save_name}.json')
@@ -358,7 +355,6 @@ if __name__=="__main__":
     dataset_len = len(dataset)
     dataset = [item for item in dataset if item['id'] not in infered_ids]
     model,processor = load_model(args)
-    #dataset = dataset[:20]
     inference(model,processor,dataset,save_name,args)
 
     if world_size > 1:
@@ -366,18 +362,15 @@ if __name__=="__main__":
     
 
     if rank == 0:
-        # for data in gathered_data:
-        #     all_infered_datas.extend(data)
         for i in range(8):
             temp_file = os.path.join(args.save_dir,f'{save_name}_{i}.json')
             if os.path.exists(temp_file):
                 with open(temp_file, 'rb') as f:
                     all_infered_datas.extend(json.load(f))
-                #os.remove(temp_file)  # 删除临时文件
         unique_dict = {item['id']: item for item in all_infered_datas}
         data = list(unique_dict.values())
-        #data = sorted(data,key = lambda item:item['id'])
+
         all_infered_datas = sorted(data,key = lambda item:item['id'])
-        #import pdb;pdb.set_trace()
+        
         assert len(all_infered_datas)==dataset_len
         save_inference_results(all_infered_datas,save_path)
