@@ -54,5 +54,5 @@ cd ALR_data_generate
 bash verify_and_merge.sh
 ```
 
-The final distilled ALR training data can be downloaded from [Link](https://pan.baidu.com/s/19r9JdHCryP0LF15n1fO4Pg？pwd=mq9m)
+The final distilled ALR training data can be downloaded from [Link](https://pan.baidu.com/s/1JN8xiNHFbRPq8P9hY44_9w?pwd=kaby)
 
