@@ -15,25 +15,22 @@ export master_addr=${MASTER_ADDR}
 export master_port=${MASTER_PORT}
 
 DEEPSPEED_CONFIG="scripts/zero3.json"
-MODEL_PATH="your/path/to/Qwen2.5-VL-7B-Instruct"
+MODEL_PATH="Qwen/Qwen2.5-VL-7B-Instruct"
 ENTRY_FILE="qwenvl/train/train_qwen.py"
 
-# 数据集与实验命名
-DATASETS=""
-RUN_NAME=""
+# DATASETS
+DATASETS="/public_data_1%100,public_data_2%100"
+RUN_NAME="YOUR_RUN_NAME"
 ATTN_IMPLEMENTATION="flash_attention_2"
-SAVE_DIR_NAME=""
+SAVE_DIR_NAME="YOUR_SAVE_DIR_NAM"
 
-# 输出目录拼接 (处理了原代码中 output_dir 嵌套的问题)
+# OUTPUT_DIR
 BASE_OUTPUT_DIR=${OUTPUT_DIR:-"./outputs"} # 如果外部没传 OUTPUT_DIR，默认存在当前目录下的 outputs
 FINAL_OUTPUT_DIR="${BASE_OUTPUT_DIR}/${RUN_NAME}/${SAVE_DIR_NAME}"
 
-# 创建输出目录
 mkdir -p "${FINAL_OUTPUT_DIR}"
 
-# ==========================================
-# 3. 超参数设置
-# ==========================================
+# Hyperparameter
 BATCH_SIZE=1
 GRAD_ACCUM_STEPS=1
 EVAL_BATCH_SIZE=$(( BATCH_SIZE * 2 ))
