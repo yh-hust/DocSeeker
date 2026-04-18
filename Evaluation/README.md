@@ -16,6 +16,23 @@ It performs model inference on benchmark datasets and then computes answer extra
 
 ## How to run
 
+## How to run
+
+prepare the images for each benchmark and place them into their respective folders under the `tmp` directory:
+
+```text
+Evaluation/
+├── mmlongbench_doc/
+│   └── tmp/
+│       ├── document_1_page_1.jpg
+│       ├── document_1_page_2.jpg
+│       ├── ...
+│       └── document_N_page_M.jpg
+├── dude/
+│   └── tmp/
+│       ├── ...
+```
+
 Set the API credentials used by the answer-extraction step if needed:
 
 ```bash
@@ -27,16 +44,8 @@ Run one of the provided scripts:
 
 ```bash
 cd Evaluation
-bash scripts/run_mpdocvqa_dude_sft.sh
+bash scripts/run_evaluation.sh
 ```
-
-or
-
-```bash
-cd Evaluation
-bash scripts/run_mmlongben_longdocurl.sh
-```
-
 ## Notes
 
 Before running, update the checkpoint path, dataset list, visible devices, and output settings in the corresponding shell script.
