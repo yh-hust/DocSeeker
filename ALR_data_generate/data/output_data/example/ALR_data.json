@@ -1,0 +1,167 @@
+[
+    {
+        "image": [
+            "a27ff3bf5afa77fabc9e97b3350e6c9a_0.jpg",
+            "a27ff3bf5afa77fabc9e97b3350e6c9a_1.jpg",
+            "a27ff3bf5afa77fabc9e97b3350e6c9a_2.jpg",
+            "a27ff3bf5afa77fabc9e97b3350e6c9a_3.jpg",
+            "a27ff3bf5afa77fabc9e97b3350e6c9a_4.jpg",
+            "a27ff3bf5afa77fabc9e97b3350e6c9a_5.jpg",
+            "a27ff3bf5afa77fabc9e97b3350e6c9a_6.jpg",
+            "a27ff3bf5afa77fabc9e97b3350e6c9a_7.jpg"
+        ],
+        "gt_page": [
+            5
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "On what page are the matters uncovered during the investigation?"
+            },
+            {
+                "from": "gpt",
+                "value": "<think>\n\\boxed{Question Analysis}\nThe user is asking to identify the page number where \"matters uncovered during the investigation\" are discussed. This requires locating the specific heading or phrase within the provided document content.\n\n\\boxed{Evidence Localization}\nI am reviewing the provided document content, which is labeled as \"Page 6\". On this page, under the main heading \"Interview of Dr. Art Tyler\", there is a sub-heading \"C.\" followed by the exact phrase \"Matters uncovered during investigation:\". This directly matches the query.\n\n\\boxed{Reasoning Process}\nThe question asks for the page number where \"matters uncovered during the investigation\" are discussed. The provided document content is explicitly labeled as \"Page 6\". Within this content, the heading \"Matters uncovered during investigation:\" is clearly visible. Therefore, the information requested is found on page 6.\n</think>\n\n<answer>\n{\"evidence_pages\": [6], \"answer\": \"Page 6\"}\n</answer>"
+            }
+        ],
+        "accu_reward_method": "mpdoc",
+        "id": 1,
+        "expand_answer": "<think>\n\\boxed{Question Analysis}\nThe user is asking to identify the page number where \"matters uncovered during the investigation\" are discussed. This requires locating the specific heading or phrase within the provided document content.\n\n\\boxed{Evidence Localization}\nI am reviewing the provided document content, which is labeled as \"Page 6\". On this page, under the main heading \"Interview of Dr. Art Tyler\", there is a sub-heading \"C.\" followed by the exact phrase \"Matters uncovered during investigation:\". This directly matches the query.\n\n\\boxed{Reasoning Process}\nThe question asks for the page number where \"matters uncovered during the investigation\" are discussed. The provided document content is explicitly labeled as \"Page 6\". Within this content, the heading \"Matters uncovered during investigation:\" is clearly visible. Therefore, the information requested is found on page 6.\n</think>\n\n<answer>\n{\"evidence_pages\": [6], \"answer\": \"Page 6\"}\n</answer>",
+        "final_answer": "Page 6"
+    },
+    {
+        "image": [
+            "4c4d7c243629467652c7c9c0f5f2ad0f_0.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_1.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_2.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_3.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_4.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_5.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_6.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_7.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_8.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_9.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_10.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_11.jpg",
+            "4c4d7c243629467652c7c9c0f5f2ad0f_12.jpg"
+        ],
+        "gt_page": [
+            0
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "What is the document number?"
+            },
+            {
+                "from": "gpt",
+                "value": "<think>\n\\boxed{Question Analysis}\nThe user is asking for the document number. This requires identifying a specific numerical or alphanumeric identifier that labels the document.\n\n\\boxed{Evidence Localization}\nI am reviewing the provided document content, which is page 1. In the upper right corner of the document, there is a clear label \"DOC #\" followed by a number. The OCR text also clearly shows \"DOC # 1997-0439766\".\n\n\\boxed{Reasoning Process}\nThe question asks for the document number. The document explicitly states \"DOC # 1997-0439766\" in the top right section. This is the direct answer to the question.\n</think>\n<answer>\n{\"evidence_pages\": [1], \"answer\": \"1997-0439766\"}\n</answer>"
+            }
+        ],
+        "accu_reward_method": "mpdoc",
+        "id": 2,
+        "expand_answer": "<think>\n\\boxed{Question Analysis}\nThe user is asking for the document number. This requires identifying a specific numerical or alphanumeric identifier that labels the document.\n\n\\boxed{Evidence Localization}\nI am reviewing the provided document content, which is page 1. In the upper right corner of the document, there is a clear label \"DOC #\" followed by a number. The OCR text also clearly shows \"DOC # 1997-0439766\".\n\n\\boxed{Reasoning Process}\nThe question asks for the document number. The document explicitly states \"DOC # 1997-0439766\" in the top right section. This is the direct answer to the question.\n</think>\n<answer>\n{\"evidence_pages\": [1], \"answer\": \"1997-0439766\"}\n</answer>",
+        "final_answer": "1997-0439766"
+    },
+    {
+        "image": [
+            "e2d7ce082ee2f17bd301d454262c3f88_0.jpg",
+            "e2d7ce082ee2f17bd301d454262c3f88_1.jpg",
+            "e2d7ce082ee2f17bd301d454262c3f88_2.jpg",
+            "e2d7ce082ee2f17bd301d454262c3f88_3.jpg",
+            "e2d7ce082ee2f17bd301d454262c3f88_4.jpg",
+            "e2d7ce082ee2f17bd301d454262c3f88_5.jpg",
+            "e2d7ce082ee2f17bd301d454262c3f88_6.jpg",
+            "e2d7ce082ee2f17bd301d454262c3f88_7.jpg",
+            "e2d7ce082ee2f17bd301d454262c3f88_8.jpg",
+            "e2d7ce082ee2f17bd301d454262c3f88_9.jpg",
+            "e2d7ce082ee2f17bd301d454262c3f88_10.jpg"
+        ],
+        "gt_page": [
+            0
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "Who is the judge of Cuyahoga County?"
+            },
+            {
+                "from": "gpt",
+                "value": "<think>\n\\boxed{Question Analysis}\nThe user is asking to identify the judge's name for the court case detailed in the provided document.\n\n\\boxed{Evidence Localization}\nI am reviewing page 1 of the document. Under the header \"IN THE COURT OF COMMON PLEAS CUYAHOGA COUNTY, OHIO\", I can see a section on the right side stating \"Case No: CV-20-940963\" and below that \"Judge: ASHLEY KILBANE\".\n\n\\boxed{Reasoning Process}\nThe document explicitly states \"Judge: ASHLEY KILBANE\" in the header section. Therefore, the judge for this case is Ashley Kilbane.\n</think>\n\n<answer>\n{\"evidence_pages\": [1], \"answer\": \"ASHLEY KILBANE\"}\n</answer>"
+            }
+        ],
+        "accu_reward_method": "mpdoc",
+        "id": 3,
+        "expand_answer": "<think>\n\\boxed{Question Analysis}\nThe user is asking to identify the judge's name for the court case detailed in the provided document.\n\n\\boxed{Evidence Localization}\nI am reviewing page 1 of the document. Under the header \"IN THE COURT OF COMMON PLEAS CUYAHOGA COUNTY, OHIO\", I can see a section on the right side stating \"Case No: CV-20-940963\" and below that \"Judge: ASHLEY KILBANE\".\n\n\\boxed{Reasoning Process}\nThe document explicitly states \"Judge: ASHLEY KILBANE\" in the header section. Therefore, the judge for this case is Ashley Kilbane.\n</think>\n\n<answer>\n{\"evidence_pages\": [1], \"answer\": \"ASHLEY KILBANE\"}\n</answer>",
+        "final_answer": "Ashley Kilbane"
+    },
+    {
+        "image": [
+            "1d7d4cdc8a88f8d94dbbd2f7961aab45_0.jpg",
+            "1d7d4cdc8a88f8d94dbbd2f7961aab45_1.jpg"
+        ],
+        "gt_page": [
+            0,
+            1
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "What is the subject of the memorandum on the first page?"
+            },
+            {
+                "from": "gpt",
+                "value": "<think>\n\\boxed{Question Analysis}\nThe user is asking to identify the subject of the memorandum that appears on the first page of the provided document. This requires locating the specific \"SUBJECT\" field within the memorandum on page 1.\n\n\\boxed{Evidence Localization}\nI am examining the provided document content. Page 1 contains a memorandum. Within this memorandum, there is a line clearly labeled \"SUBJECT:\". The text immediately following this label is \"RUNNING COAL\".\n\n\\boxed{Reasoning Process}\nThe question directly asks for the subject of the memorandum on the first page. The evidence on page 1 explicitly states \"SUBJECT: RUNNING COAL\". Therefore, the subject is \"RUNNING COAL\".\n</think>\n<answer>\n{\"evidence_pages\": [1], \"answer\": \"RUNNING COAL\"}\n</answer>"
+            }
+        ],
+        "accu_reward_method": "mpdoc",
+        "id": 5,
+        "expand_answer": "<think>\n\\boxed{Question Analysis}\nThe user is asking to identify the subject of the memorandum that appears on the first page of the provided document. This requires locating the specific \"SUBJECT\" field within the memorandum on page 1.\n\n\\boxed{Evidence Localization}\nI am examining the provided document content. Page 1 contains a memorandum. Within this memorandum, there is a line clearly labeled \"SUBJECT:\". The text immediately following this label is \"RUNNING COAL\".\n\n\\boxed{Reasoning Process}\nThe question directly asks for the subject of the memorandum on the first page. The evidence on page 1 explicitly states \"SUBJECT: RUNNING COAL\". Therefore, the subject is \"RUNNING COAL\".\n</think>\n<answer>\n{\"evidence_pages\": [1], \"answer\": \"RUNNING COAL\"}\n</answer>",
+        "final_answer": "RUNNING COAL"
+    },
+    {
+        "image": [
+            "12dba1fcb2cffe9f5052df2ee51fbca8_0.jpg",
+            "12dba1fcb2cffe9f5052df2ee51fbca8_1.jpg",
+            "12dba1fcb2cffe9f5052df2ee51fbca8_2.jpg",
+            "12dba1fcb2cffe9f5052df2ee51fbca8_3.jpg"
+        ],
+        "gt_page": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "whether the estimated construction cost is less than 200000?"
+            },
+            {
+                "from": "gpt",
+                "value": "<think>\n\\boxed{Question Analysis}\nThe user is asking whether the \"estimated construction cost\" found in the provided document pages is less than 200,000. I need to scan each page for the \"ESTIMATED CONSTRUCTION COST\" field and compare the values found to 200,000.\n\n\\boxed{Evidence Localization}\n- Page 1: This is a certification document and does not contain construction cost information.\n- Page 2: Look at field 9, \"ESTIMATED CONSTRUCTION COST\". The entry is \"7,400.00\".\n- Page 3: Look at field 9, \"ESTIMATED CONSTRUCTION COST\". The entry is \"150,000.00\".\n- Page 4: Look at field 9, \"ESTIMATED CONSTRUCTION COST\". The entry is \"4,000 - 5,000\".\n\n\\boxed{Reasoning Process}\n- Comparing the values found:\n  - 7,400.00 < 200,000 (True)\n  - 150,000.00 < 200,000 (True)\n  - 4,000–5,000 < 200,000 (True)\nAll estimated construction costs explicitly mentioned in the documents are clearly less than 200,000.\n</think>\n<answer>\n{\"evidence_pages\": [2, 3, 4], \"answer\": \"Yes. $150,000.00\"}\n</answer>"
+            }
+        ],
+        "accu_reward_method": "mpdoc",
+        "id": 9
+    },
+    {
+        "image": [
+            "be39ba1a449301e3c6b916ea4d441eb7_0.jpg"
+        ],
+        "gt_page": [
+            0
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "Who are the authors of this document?"
+            },
+            {
+                "from": "gpt",
+                "value": "<think>\n\\boxed{Question Analysis}\nThe user is asking to identify the authors of the document provided on page 1.\n\n\\boxed{Evidence Localization}\nI am reviewing the top section of the provided page 1. Below the main title \"Matter of Fact\" and next to a separator, the text explicitly states \"By Joseph and Stewart Alsop\".\n\n\\boxed{Reasoning Process}\nThe document title, \"Matter of Fact\", is followed immediately by the attribution \"By Joseph and Stewart Alsop\". Therefore, Joseph Alsop and Stewart Alsop are the authors of this piece.\n</think>\n\n<answer>\n{\"evidence_pages\": [1], \"answer\": \"Joseph Alsop   Stewart Alsop\"}\n</answer>"
+            }
+        ],
+        "accu_reward_method": "mpdoc",
+        "id": 13
+    }
+]
