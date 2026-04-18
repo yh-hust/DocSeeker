@@ -41,7 +41,7 @@ To address this, DocSeeker introduces a structured **Analysis–Localization–R
 
 ---
 
-## Methnology
+## Methodology
 
 <p align="center">
     <img src="https://s41.ax1x.com/2026/04/18/pe6VHJA.png" width="1000"/>
