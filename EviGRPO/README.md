@@ -13,6 +13,12 @@ It optimizes the policy model with a reward that jointly considers output format
 
 ## How to run
 
+### Parepare training data
+
+Download online filter training data and validation data from [Link](https://pan.baidu.com/s/16n4ZR_pHGEvP6YPbOr8UNw?pwd=yy8i)
+
+### Start Fine-Tuning
+
 ```bash
 cd EviGRPO
 bash scripts/run_EviGRPO.sh
