@@ -23,13 +23,13 @@ VIDEOCHATGPT = {
 
 
 MPDOCVQA_EXPAND_COR = {
-    "annotation_path": "/home/ma-user/work/dataset/dataset_yh/docseeker_traindata/mpdocvqa/sft_mpdocvqa_expand_data_correct.jsonl",
-    "data_path": "/home/ma-user/work/dataset/dataset_yh/docseeker_traindata/ablation/images",
+    "annotation_path": "/path/to/sft_mpdocvqa_expand_data_correct.jsonl",
+    "data_path": "/path/to/your/ablation/images",
 }
 
 DUDE_EXPAND_COR = {
-    "annotation_path": "/home/ma-user/work/dataset/dataset_yh/docseeker_traindata/dude/sft_dude_expand_data_correct.jsonl",
-    "data_path": "/home/ma-user/work/dataset/dataset_yh/docseeker_traindata/ablation/images",
+    "annotation_path": "/path/to/sft_dude_expand_data_correct.jsonl",
+    "data_path": "/path/to/your/images",
 }
 
 
