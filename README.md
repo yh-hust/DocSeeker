@@ -6,7 +6,6 @@ Hao Yan, Yuliang Liu, Xingchen Liu, Yuyi Zhang, Minghui Liao, Jihao Wu, Wei Chen
 <h5 align="center">
 
 [\[📜 Paper\]](https://arxiv.org/abs/2604.12812) [\[🚀 Code\]](https://github.com/yh-hust/DocSeeker) [\[📖 Project Page\]](https://lxc-hust.github.io/DocSeek_home/)
-
 <br>
 </h5>
 
