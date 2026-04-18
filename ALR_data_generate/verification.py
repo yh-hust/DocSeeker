@@ -135,13 +135,13 @@ def map_function(args):
 if __name__=='__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--file_path", type=str, default="data/stage1_synthesis/mpdoc_expand_data_0_10/data.json")
+    parser.add_argument("--file_path", type=str, default="")
     parser.add_argument("--model_name", type=str, default="gemini-2.5-flash")
     parser.add_argument("--max_workers",type=int,default=5)
     args = parser.parse_args()
 
-    file_path = args.file_path
-    folder_path = os.path.dirname(file_path)
+    folder_path = args.file_path
+    file_path = os.path.json(folder_path,'data.json')
     
     exact_match_path = os.path.join(folder_path, 'exact_match.json') 
     semantic_match_path = os.path.join(folder_path, 'semantic_match.json')
